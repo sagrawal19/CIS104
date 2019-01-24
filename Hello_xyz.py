@@ -1,4 +1,4 @@
-msg = "hello python"
+msg = "hello Sibani"
 print(msg)
 msg.capitalize
 
