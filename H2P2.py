@@ -8,13 +8,13 @@ import datetime
 now = datetime.datetime.now()
 # print(now.year)
 book_age = now.year - book_Year
-
+# conditional statement for book age
 if (book_age <= 10):
     print("This book is younger than ten years old.")
 else:
     print("This book is at least ten years old. ")
 
-# using if statement in book page
+# conditional statement for book page
 if (book_Page <= 100):
     print("This book is a short book.")
 elif (book_Page > 100 & book_Page < 300):
