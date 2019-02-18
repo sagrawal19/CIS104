@@ -4,7 +4,6 @@ currentValue = 0
 memoryValue =  0
 
 
-
 # Function to add two numbers
 def add(leftValue, rightValue): 
         result =leftValue + rightValue
@@ -28,7 +27,6 @@ def divide(leftValue, rightValue):
         result =leftValue /rightValue
         return result
       
-
 
 # i.	Memory Store: Store the calculator’s current value in the memory value.
 def setMemoryValue(value):
