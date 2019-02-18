@@ -1,21 +1,9 @@
 import math
 
-#leftValue = 0
-#print(leftValue)
-#rightValue = 0
-#print (rightValue)
-#result = 0  
-#print(result)
-
-#def clear():
 currentValue = 0
-memoryValue =0
+memoryValue =  0
 
-def setMemoryValue(value):
-    memoryValue = value
 
-def getMemoryValue():
-     return memoryValue 
 
 # Function to add two numbers
 def add(leftValue, rightValue): 
@@ -39,10 +27,39 @@ def divide(leftValue, rightValue):
         result =leftValue /rightValue
         return result
         #print(result)
-# i.	Memory Store: Store the calculator’s current value in the memory value.
 
+
+# i.	Memory Store: Store the calculator’s current value in the memory value.
+def setMemoryValue(value):
+    global memoryValue
+    global currentValue
+    memoryValue = value
+    currentValue = value
 
 #j.	Memory Recall: Change the calculator’s current value to whatever is in the memory value, and returns the new current value.
+def getMemoryValue():
+    return memoryValue
+
+#k.	Current Clear: Clear the memory value.
+def clearCurrent():
+    global currentValue
+    currentValue = 0
+
 #k.	Memory Clear: Clear the memory value.
+def clearMemory():
+    global memoryValue
+    memoryValue = 0
+    return memoryValue
+
 #l.	Invert: Invert the sign of the calculator’s current value, and returns the new current value.
+def invert():
+        global currentValue
+        result = -1*currentValue
+        return result
+        
+
 #m.	Power: Calculates the calculator’s current value to a specific power, and returns the new current value.
+def power(leftValue, rightValue):  
+        result =leftValue ** rightValue
+        return result
+        #print(result)
