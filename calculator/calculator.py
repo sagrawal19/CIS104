@@ -9,24 +9,25 @@ memoryValue =  0
 def add(leftValue, rightValue): 
         result =leftValue + rightValue
         return result
-        #print(result)
+        
     
 # Function to subtract two numbers  
 def subtract(leftValue, rightValue):  
         result= leftValue- rightValue
         return result
-        #print(result)
-  
+        
+
 # Function to multiply two numbers 
 def multiply(leftValue, rightValue):  
         result =leftValue* rightValue 
         return result
-        #print(result)
+       
+
 # Function to divide two numbers 
 def divide(leftValue, rightValue):  
         result =leftValue /rightValue
         return result
-        #print(result)
+      
 
 
 # i.	Memory Store: Store the calculator’s current value in the memory value.
