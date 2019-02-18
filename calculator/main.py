@@ -1,6 +1,6 @@
 import calculator
 import math
-
+# choice for operator
 operator = ''
 print("Select operation.")
 print("1.Add")
@@ -13,6 +13,7 @@ print("i.Invert")
 print("c.Clear")
 print("x.Exit")
 
+# while loop for calculation
 while(True):
     
     choice = input("Enter choice(1/2/3/4/5/r/i/c/x):")
