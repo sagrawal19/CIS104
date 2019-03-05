@@ -25,32 +25,41 @@ def DisplayMenu():
     print("exit – Exit the program")
 
 
-  # function to add the song 
+# function to add the song 
 def AddSong():
   global isSongAdded 
   isSongAdded = True
   global song
 
-  song_title = input("Enter Song Title: ")   # Taking input for song title and checking should not exceed 64 char
-  if (len(song_title) <= 64):
-    print('\n')
-  else:
-    print("Wroung input of song title ")
-    input("Please Enter Song Title: ")
+  # Taking input for song title and checking should not exceed 64 char
+  song_title = input("Please enter song title : ")  
+  while True :
+    if(len(song_title) <=65):
+      print('\n')
+      break
+    else:
+      print("wrong input")
+      song_title = input("Please enter song title : ")
 
-  artist = input("Enter Artist: ")     # Taking input for Artist and checking should not exceed 32 char
-  if (len(artist) <=32):
-    print('\n')
-  else:
-    print("wroung input of Artist name")
-    input("Please Enter Artist:")
+   # Taking input for Artist and checking should not exceed 32 char
+  artist = input("Enter Artist: ")  
+  while True:
+    if (len(artist) <=32):
+      print('\n')
+      break
+    else:
+      print("wroung input ")
+      artist = input("Enter Artist: ")
 
-  album = input("Enter Album: ")   # Taking input for Album and checking should not exceed 64 char
-  if (len(album) <= 64):
-    print('\n')
-  else:
-    print("Wroung input of Album ")
-    input("Please Enter Album : ")
+   # Taking input for Album and checking should not exceed 64 char
+  album = input("Enter Album: ") 
+  while True :
+    if (len(album) <= 64):
+      print('\n')
+      break
+    else:
+      print("Wroung input of Album ")
+      album = input("Enter Album: ")
 
   track_number = int(input("Enter the Track_number: "))   # input for track number
   released_year = int(input("Enter the Released_year: ")) #input for released year
