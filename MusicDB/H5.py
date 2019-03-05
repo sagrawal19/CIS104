@@ -1,9 +1,9 @@
-import MusicDB
+import MusicDB   # import MusicDB to H5
 
-MusicDB.DisplayMenu()
+MusicDB.DisplayMenu()  # Display the main menu
 while(True):
 
-     choice = input("Enter your choice: ")
+     choice = input("Enter your choice: ") # taking a choice
      if choice == 'add':
           MusicDB.AddSong()
           continue
@@ -25,4 +25,4 @@ while(True):
      elif choice == 'exit':
           break
      else:
-          print("Invalid Choice")
+          print("Invalid Choice")    

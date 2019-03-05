@@ -13,7 +13,7 @@ import os.path
 
 song = {}
 isSongAdded = False
-
+  # function to display the main Menu
 def DisplayMenu():
     print("Select operation.")
     print("add – Add a new song to the database")
@@ -25,46 +25,52 @@ def DisplayMenu():
     print("exit – Exit the program")
 
 
-    
+  # function to add the song 
 def AddSong():
-    global isSongAdded
-    isSongAdded = True
-    global song
-    song_title = input("Enter Song Title: ")
-    artist = input("Enter Artist: ")
-    album = input("Enter Album: ")
-    track_number = int(input("Enter the Track_number: "))
-    released_year = int(input("Enter the Released_year: "))
-    genre = input("Enter Genre: ")
-   
-    # create a song record
-    song = dict(Song_title = song_title, Artist = artist, Album = album, Track_number = track_number, Released_year = released_year, Genre = genre) 
+  global isSongAdded 
+  isSongAdded = True
+  global song
 
-#def GetSongNumber(number):  
-   # try:
-    #     int(number)
-    #except:
-    #     return None
-    #if(number <1):
-   #     return None
-   # if((number // 1) > songs.count):
-    #   return None
-    #else:
-    #    return songs[(number // 1)-1]
+  song_title = input("Enter Song Title: ")   # Taking input for song title and checking should not exceed 64 char
+  if (len(song_title) <= 64):
+    print('\n')
+  else:
+    print("Wroung input of song title ")
+    input("Please Enter Song Title: ")
+
+  artist = input("Enter Artist: ")     # Taking input for Artist and checking should not exceed 32 char
+  if (len(artist) <=32):
+    print('\n')
+  else:
+    print("wroung input of Artist name")
+    input("Please Enter Artist:")
+
+  album = input("Enter Album: ")   # Taking input for Album and checking should not exceed 64 char
+  if (len(album) <= 64):
+    print('\n')
+  else:
+    print("Wroung input of Album ")
+    input("Please Enter Album : ")
+
+  track_number = int(input("Enter the Track_number: "))   # input for track number
+  released_year = int(input("Enter the Released_year: ")) #input for released year
+  genre = input("Enter Genre: ")      #input for Genre
+
+  # create a song record
+  song = dict(Song_title = song_title, Artist = artist, Album = album, Track_number = track_number, Released_year = released_year, Genre = genre) 
 
 
-#song GetSongByTitle(string title)
-#{
-#   // Do something to get the song by tit
 
-
+   # function for listing the song
 def SongList():
-  if(os.path.exists('Song_DB.json')):
+  if(os.path.exists('Song_DB.json')):  # checking is there any song in the database
     songs_list = json.load(open('Song_DB.json'))
     print("The list of Songs are: " , songs_list)
   else:
     print("Song database doesn't exist")
 
+
+   #function to save the song
 def SongSave():
   global song
   global isSongAdded
@@ -94,16 +100,21 @@ def SongSave():
   
   isSongAdded = False
 
+
+# Function for Help Menu
 def Help():
   DisplayMenu()
 
+
+  #Function to get total song
 def GetTotalSongs():
-  if(os.path.exists('Song_DB.json')):
+  if(os.path.exists('Song_DB.json')): # checking is there a song in the database and calculate count
     songs_list = json.load(open('Song_DB.json'))
     print("Total songs in database::",len(songs_list))
   else:
     print("Song database doesn't exist")
  
+  #Function to get song information
 def GetSongInformation(songNumber):
   if(songNumber > 8 or songNumber < 1):
     print("Enter a correct Song Number to get the information")
