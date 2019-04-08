@@ -22,6 +22,8 @@ while(True):
           continue
      elif choice == 'help':
           MusicDB.Help()
+     elif choice == 'sort':
+          MusicDB.SongSort()
      elif choice == 'exit':
           break
      else:

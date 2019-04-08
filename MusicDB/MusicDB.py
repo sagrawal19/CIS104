@@ -19,6 +19,7 @@ def DisplayMenu():
     print("add – Add a new song to the database")
     print("list – List the songs in the database")
     print("save – Save the songs to the database")
+    print("sort – Sort the songs to the database")
     print("total – Get total number of songs in the database")
     print("info – Get the information about a particular song in the database")
     print("help – Display a menu explaining the commands to the users")
@@ -78,7 +79,13 @@ def SongList():
   else:
     print("Song database doesn't exist")
 
-
+#function to sort the song
+def SongSort():
+  if(os.path.exists('Song_DB.json')):  
+    songs_list = json.load(open('Song_DB.json'))
+    songs_list = sorted(songs_list, key=lambda k: k.get('Song_title', 0), reverse=False)
+    print("The  sorted list are: " , songs_list)
+    
    #function to save the song
 def SongSave():
   global song
@@ -117,6 +124,7 @@ def Help():
 
   #Function to get total song
 def GetTotalSongs():
+  print("Song Path:::",os.path)
   if(os.path.exists('Song_DB.json')): # checking is there a song in the database and calculate count
     songs_list = json.load(open('Song_DB.json'))
     print("Total songs in database::",len(songs_list))
